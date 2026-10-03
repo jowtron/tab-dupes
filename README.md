@@ -46,3 +46,7 @@ Everything happens on your Mac. Tab Dupes makes no network requests, and it neve
 - **Safari closed:** reads a copy of `~/Library/Containers/com.apple.Safari/Data/Library/Safari/SafariTabs.db` (`Sources/SavedTabs.swift`). Each window's tabs are `bookmarks` rows (type 0) under the folder in `windows.local_tab_group_id`; the selected tab is `windows_tab_groups.active_tab_id`. Local file tabs have an empty `url` column, with the address in `LocalURL` inside the `extra_attributes` plist. This schema is undocumented and was checked on macOS 26.
 - **Matching:** `Sources/URLKey.swift`. Route-style fragments (`#/…`, `#!…`, anything containing `/`) are always kept. A tab with a title but no address is never treated as a duplicate.
 - **Icon:** drawn in code by `icon/make-icon.swift`. `build.sh` re-renders it when the script changes and cuts the `.icns` from `icon/AppIcon-1024.png`; replace that PNG to use your own.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
